@@ -61,7 +61,7 @@
   margin: auto;
   width: 80%;
   height: 80%;
-  overflow-y: auto;
+  overflow: auto;
   background: #130f24;
   color: #fefefe;
   border-radius: 8px;
