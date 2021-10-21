@@ -3,6 +3,7 @@
 
 // Background of the presentation
 $backgroundColor: #2b2b2b;
+$backgroundColorSecondary: rgb(55, 39, 204);
 
 // Primary/body text
 $mainFont: 'Lato', sans-serif;
@@ -26,16 +27,16 @@ $heading1TextShadow: $headingTextShadow;
 $heading1Size: 3.77em;
 $heading2Size: 2.11em;
 $heading3Size: 1.55em;
-$heading4Size: 1.00em;
+$heading4Size: 1em;
 
 $codeFont: monospace;
 
 // Links and actions
-$linkColor: #13DAEC;
-$linkColorHover: lighten( $linkColor, 20% );
+$linkColor: #13daec;
+$linkColorHover: lighten($linkColor, 20%);
 
 // Text selection
-$selectionBackgroundColor: #FF5E99;
+$selectionBackgroundColor: #ff5e99;
 $selectionColor: #fff;
 
 // Generates the presentation background, can be overridden

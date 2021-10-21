@@ -1,23 +1,120 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+		/>
 
-		<title>reveal.js</title>
+		<title>Storybook 21-10</title>
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+		<link rel="stylesheet" href="dist/reset.css" />
+		<link rel="stylesheet" href="dist/reveal.css" />
+		<link rel="stylesheet" href="dist/theme/storybook.21-10.css" />
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" />
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Yantramanav:wght@100;400;500;700;900&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<!-- Slide -->
+				<section class="slide first dual">
+					<article>
+						<div class="title-wrapper">
+							<h1>LAB UI</h1>
+							<h4>Storybook</h4>
+							<img
+								src="/assets/media/build-addons.png"
+								alt="Storybook image, controls"
+								height="200"
+							/>
+						</div>
+					</article>
+					<article>
+						<video
+							class="main"
+							autoplay=""
+							loop=""
+							playsinline=""
+							alt="Introduction video"
+						>
+							<source
+								src="assets/media/storybook-hero-video-optimized-lg.mp4"
+								type="video/mp4"
+							/>
+						</video>
+					</article>
+				</section>
+
+				<!-- Slide -->
+				<section class="slide second dual-alternative">
+					<article>
+						<h4>Estructura básica</h4>
+					</article>
+					<article class="code">
+						<pre><code><script type="text/template">
+
+import React from 'react';
+import { withDesign } from 'storybook-addon-designs';
+import Button from './Button';
+
+// eslint-disable-next-line import/no-anonymous-default-export
+export default {
+	title: 'LANA/Common/Botón',
+	decoratos: [withDesign],
+	component: Button,
+	argTypes: {
+		mod: {
+			options: ['primary', 'secondary', 'tertiary', 'special'],
+			control: {
+				type: 'select',
+			},
+		},
+		size: {
+			options: ['mini', 'small', 'medium', 'large'],
+			control: {
+				type: 'select',
+			},
+		},
+		onClick: {
+			action: 'clicked',
+		},
+	},
+};
+
+const Template = args => <Button {...args} />;
+
+export const Primario = Template.bind({});
+Primario.args = {
+	label: 'Button',
+	mod: 'primary',
+	disabled: false,
+	onClick: () => console.log('Hello'),
+};
+Primario.parameters = {
+	design: {
+		type: 'figma',
+		url: 'https://www.figma.com/file/UVY3wVRriGORNQUz51Drlr/DS-%2F-LN-Components?node-id=3401%3A873',
+	},
+};
+
+						</script></code></pre>
+					</article>
+				</section>
 			</div>
 		</div>
 
@@ -26,14 +123,9 @@
 		<script src="plugin/markdown/markdown.js"></script>
 		<script src="plugin/highlight/highlight.js"></script>
 		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
-
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+				plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
 			});
 		</script>
 	</body>
