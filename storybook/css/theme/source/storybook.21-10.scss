@@ -23,6 +23,23 @@
 	font-family: $font;
 	letter-spacing: 1px;
 
+	ul {
+		list-style: none !important;
+		text-align: initial !important;
+		font-size: 48px;
+		line-height: 48px;
+
+		li {
+			> * {
+				margin-left: 32px;
+			}
+
+			&.root:not(:first-child) {
+				margin-top: 32px;
+			}
+		}
+	}
+
 	.slides {
 		color: $white;
 		width: 100vw !important;
@@ -67,6 +84,12 @@
 					}
 				}
 			}
+			&.full {
+				h4 {
+					font-size: 96px !important;
+					line-height: 112px !important;
+				}
+			}
 
 			article {
 				display: flex;
@@ -77,6 +100,7 @@
 
 				&.code {
 					> * {
+						text-align: left;
 						position: relative;
 						margin: auto;
 						width: 80%;
@@ -107,6 +131,28 @@
 						&:before {
 							right: calc(12px + 8px * 2);
 							background: $purple;
+						}
+					}
+
+					.comment {
+						color: rgba(255, 255, 255, 0.6);
+					}
+					.links {
+						display: flex;
+						flex-direction: column;
+						margin-top: 16px;
+						row-gap: 8px;
+
+						> a {
+							color: $backgroundColor;
+							transition: 0.1s ease-in-out;
+
+							&:hover {
+								opacity: 0.6;
+							}
+							&:visited {
+								color: $backgroundColor;
+							}
 						}
 					}
 				}
@@ -156,13 +202,38 @@
 					}
 				}
 			}
-			&.second {
+			&.third,
+			&.second,
+			&.second-next,
+			&.last,
+			&.full.stylus,
+			&.full {
 				h4 {
 					text-align: left;
 					font-weight: 900;
 					font-family: $secondaryFont;
 					font-size: 32px;
+					line-height: 40px;
 					margin: 0 auto;
+				}
+			}
+			&.second-next {
+				padding-left: 32px;
+			}
+			&.last {
+				.code > * {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					font-size: 24px;
+					line-height: 32px;
+				}
+			}
+
+			section {
+				&.markdown {
+					text-align: left;
+					font-size: 32px;
 				}
 			}
 		}

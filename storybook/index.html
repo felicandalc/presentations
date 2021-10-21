@@ -65,10 +65,71 @@
 					<article>
 						<h4>Estructura básica</h4>
 					</article>
+					<article>
+						<section class="markdown" data-markdown>
+							<script type="text/template">
+								* 📁 .storybook <!-- .element: class="fragment root" data-fragment-index="14" -->
+								* 📁 scripts <!-- .element: class="fragment root" data-fragment-index="2" -->
+									* 📁 figma-tokens <!-- .element: class="fragment" data-fragment-index="3" -->
+								* 📁 src <!-- .element: class="fragment root" data-fragment-index="1" -->
+									* 📁 components <!-- .element: class="fragment" data-fragment-index="4" -->
+										* 📁 arc <!-- .element: class="fragment" data-fragment-index="11" -->
+										* 📁 club <!-- .element: class="fragment" data-fragment-index="12" -->
+										* 📁 miCuenta <!-- .element: class="fragment" data-fragment-index="13" -->
+									* 📁 pages <!-- .element: class="fragment" data-fragment-index="5" -->
+									* 📁 statics <!-- .element: class="fragment" data-fragment-index="6" -->
+										* 📁 fonts <!-- .element: class="fragment" data-fragment-index="7" -->
+										* 📁 imgs <!-- .element: class="fragment" data-fragment-index="8" -->
+										* 📁 scss <!-- .element: class="fragment" data-fragment-index="9" -->
+									* 📁 helpers <!-- .element: class="fragment" data-fragemnt-index="10" -->
+							</script>
+						</section>
+					</article>
+				</section>
+
+				<!-- Slide -->
+				<section class="slide second-next dual-alternative">
+					<article>
+						<h4>
+							Estructura básica
+							<br />
+							<br />
+							Generación de componentes
+						</h4>
+					</article>
+					<article>
+						<section class="markdown" data-markdown>
+							<script type="text/template">
+								* 📁 club <!-- .element: class="fragment root" data-fragment-index="1" -->
+									* 📁 src <!-- .element: class="fragment" data-fragment-index="3" -->
+										* 📁 card <!-- .element: class="fragment" data-fragment-index="4" -->
+											* 📋 Card.jsx <!-- .element: class="fragment" data-fragment-index="5" -->
+											* 📋 _card.scss <!-- .element: class="fragment" data-fragment-index="6" -->
+											* 📋 Card.stories.js <!-- .element: class="fragment" data-fragment-index="7" -->
+											* 📋 index.js <!-- .element: class="fragment" data-fragment-index="8" -->
+										* 📋 index.js <!-- .element: class="fragment" data-fragment-index="9" -->
+									* 📋 package.json <!-- .element: class="fragment" data-fragment-index="2" -->
+							</script>
+						</section>
+					</article>
+				</section>
+
+				<!-- Slide -->
+				<section
+					class="slide third dual-alternative"
+					data-transition="none"
+				>
+					<article>
+						<h4>
+							Estructura básica
+							<br />
+							<br />
+							Una historia
+						</h4>
+					</article>
 					<article class="code">
-						<pre><code class="hljs"><script type="text/template">
-import React from 'react';
-import { withDesign } from 'storybook-addon-designs';
+						<pre><code data-line-numbers="1">
+<script type="text/template">import { withDesign } from 'storybook-addon-designs';
 import Button from './Button';
 
 // eslint-disable-next-line import/no-anonymous-default-export
@@ -107,11 +168,425 @@ Primario.args = {
 Primario.parameters = {
 	design: {
 		type: 'figma',
-		url: 'https://www.figma.com/file/UVY3wVRriGORNQUz51Drlr/DS-%2F-LN-Components?node-id=3401%3A873',
+		url: 'https://www.figma.com/bla-bla-bla',
+	},
+};</script>
+						</code></pre>
+					</article>
+				</section>
+
+				<!-- Slide -->
+				<section
+					class="slide third dual-alternative"
+					data-transition="none"
+				>
+					<article>
+						<h4>
+							Estructura básica
+							<br />
+							<br />
+							Una historia
+						</h4>
+					</article>
+					<article class="code">
+						<pre><code data-line-numbers="2">
+<script type="text/template">import { withDesign } from 'storybook-addon-designs';
+import Button from './Button';
+
+// eslint-disable-next-line import/no-anonymous-default-export
+export default {
+	title: 'LANA/Common/Botón',
+	decoratos: [withDesign],
+	component: Button,
+	argTypes: {
+		mod: {
+			options: ['primary', 'secondary', 'tertiary', 'special'],
+			control: {
+				type: 'select',
+			},
+		},
+		size: {
+			options: ['mini', 'small', 'medium', 'large'],
+			control: {
+				type: 'select',
+			},
+		},
+		onClick: {
+			action: 'clicked',
+		},
 	},
 };
-						</script></code></pre>
+
+const Template = args => <Button {...args} />;
+
+export const Primario = Template.bind({});
+Primario.args = {
+	label: 'Button',
+	mod: 'primary',
+	disabled: false,
+	onClick: () => console.log('Hello'),
+};
+Primario.parameters = {
+	design: {
+		type: 'figma',
+		url: 'https://www.figma.com/bla-bla-bla',
+	},
+};</script>
+						</code></pre>
 					</article>
+				</section>
+
+				<!-- Slide -->
+				<section
+					class="slide third dual-alternative"
+					data-transition="none"
+				>
+					<article>
+						<h4>
+							Estructura básica
+							<br />
+							<br />
+							Una historia
+						</h4>
+					</article>
+					<article class="code">
+						<pre><code data-line-numbers="5-26">
+<script type="text/template">import { withDesign } from 'storybook-addon-designs';
+import Button from './Button';
+
+// eslint-disable-next-line import/no-anonymous-default-export
+export default {
+	title: 'LANA/Common/Botón',
+	decoratos: [withDesign],
+	component: Button,
+	argTypes: {
+		mod: {
+			options: ['primary', 'secondary', 'tertiary', 'special'],
+			control: {
+				type: 'select',
+			},
+		},
+		size: {
+			options: ['mini', 'small', 'medium', 'large'],
+			control: {
+				type: 'select',
+			},
+		},
+		onClick: {
+			action: 'clicked',
+		},
+	},
+};
+
+const Template = args => <Button {...args} />;
+
+export const Primario = Template.bind({});
+Primario.args = {
+	label: 'Button',
+	mod: 'primary',
+	disabled: false,
+	onClick: () => console.log('Hello'),
+};
+Primario.parameters = {
+	design: {
+		type: 'figma',
+		url: 'https://www.figma.com/bla-bla-bla',
+	},
+};</script>
+						</code></pre>
+					</article>
+				</section>
+
+				<!-- Slide -->
+				<section
+					class="slide third dual-alternative"
+					data-transition="none"
+				>
+					<article>
+						<h4>
+							Estructura básica
+							<br />
+							<br />
+							Una historia
+						</h4>
+					</article>
+					<article class="code">
+						<pre><code data-line-numbers="28">
+<script type="text/template">import { withDesign } from 'storybook-addon-designs';
+import Button from './Button';
+
+// eslint-disable-next-line import/no-anonymous-default-export
+export default {
+	title: 'LANA/Common/Botón',
+	decoratos: [withDesign],
+	component: Button,
+	argTypes: {
+		mod: {
+			options: ['primary', 'secondary', 'tertiary', 'special'],
+			control: {
+				type: 'select',
+			},
+		},
+		size: {
+			options: ['mini', 'small', 'medium', 'large'],
+			control: {
+				type: 'select',
+			},
+		},
+		onClick: {
+			action: 'clicked',
+		},
+	},
+};
+
+const Template = args => <Button {...args} />;
+
+export const Primario = Template.bind({});
+Primario.args = {
+	label: 'Button',
+	mod: 'primary',
+	disabled: false,
+	onClick: () => console.log('Hello'),
+};
+Primario.parameters = {
+	design: {
+		type: 'figma',
+		url: 'https://www.figma.com/bla-bla-bla',
+	},
+};</script>
+						</code></pre>
+					</article>
+				</section>
+
+				<!-- Slide -->
+				<section
+					class="slide third dual-alternative"
+					data-transition="none"
+				>
+					<article>
+						<h4>
+							Estructura básica
+							<br />
+							<br />
+							Una historia
+						</h4>
+					</article>
+					<article class="code">
+						<pre><code data-line-numbers="30">
+<script type="text/template">import { withDesign } from 'storybook-addon-designs';
+import Button from './Button';
+
+// eslint-disable-next-line import/no-anonymous-default-export
+export default {
+	title: 'LANA/Common/Botón',
+	decoratos: [withDesign],
+	component: Button,
+	argTypes: {
+		mod: {
+			options: ['primary', 'secondary', 'tertiary', 'special'],
+			control: {
+				type: 'select',
+			},
+		},
+		size: {
+			options: ['mini', 'small', 'medium', 'large'],
+			control: {
+				type: 'select',
+			},
+		},
+		onClick: {
+			action: 'clicked',
+		},
+	},
+};
+
+const Template = args => <Button {...args} />;
+
+export const Primario = Template.bind({});
+Primario.args = {
+	label: 'Button',
+	mod: 'primary',
+	disabled: false,
+	onClick: () => console.log('Hello'),
+};
+Primario.parameters = {
+	design: {
+		type: 'figma',
+		url: 'https://www.figma.com/bla-bla-bla',
+	},
+};</script>
+						</code></pre>
+					</article>
+				</section>
+
+				<!-- Slide -->
+				<section
+					class="slide third dual-alternative"
+					data-transition="none"
+				>
+					<article>
+						<h4>
+							Estructura básica
+							<br />
+							<br />
+							Una historia
+						</h4>
+					</article>
+					<article class="code">
+						<pre><code data-line-numbers="31-36">
+<script type="text/template">import { withDesign } from 'storybook-addon-designs';
+import Button from './Button';
+
+// eslint-disable-next-line import/no-anonymous-default-export
+export default {
+	title: 'LANA/Common/Botón',
+	decoratos: [withDesign],
+	component: Button,
+	argTypes: {
+		mod: {
+			options: ['primary', 'secondary', 'tertiary', 'special'],
+			control: {
+				type: 'select',
+			},
+		},
+		size: {
+			options: ['mini', 'small', 'medium', 'large'],
+			control: {
+				type: 'select',
+			},
+		},
+		onClick: {
+			action: 'clicked',
+		},
+	},
+};
+
+const Template = args => <Button {...args} />;
+
+export const Primario = Template.bind({});
+Primario.args = {
+	label: 'Button',
+	mod: 'primary',
+	disabled: false,
+	onClick: () => console.log('Hello'),
+};
+Primario.parameters = {
+	design: {
+		type: 'figma',
+		url: 'https://www.figma.com/bla-bla-bla',
+	},
+};</script>
+						</code></pre>
+					</article>
+				</section>
+
+				<!-- Slide -->
+				<section
+					class="slide third dual-alternative"
+					data-transition="none"
+				>
+					<article>
+						<h4>
+							Estructura básica
+							<br />
+							<br />
+							Una historia
+						</h4>
+					</article>
+					<article class="code">
+						<pre><code data-line-numbers="37-42">
+<script type="text/template">import { withDesign } from 'storybook-addon-designs';
+import Button from './Button';
+
+// eslint-disable-next-line import/no-anonymous-default-export
+export default {
+	title: 'LANA/Common/Botón',
+	decoratos: [withDesign],
+	component: Button,
+	argTypes: {
+		mod: {
+			options: ['primary', 'secondary', 'tertiary', 'special'],
+			control: {
+				type: 'select',
+			},
+		},
+		size: {
+			options: ['mini', 'small', 'medium', 'large'],
+			control: {
+				type: 'select',
+			},
+		},
+		onClick: {
+			action: 'clicked',
+		},
+	},
+};
+
+const Template = args => <Button {...args} />;
+
+export const Primario = Template.bind({});
+Primario.args = {
+	label: 'Button',
+	mod: 'primary',
+	disabled: false,
+	onClick: () => console.log('Hello'),
+};
+Primario.parameters = {
+	design: {
+		type: 'figma',
+		url: 'https://www.figma.com/bla-bla-bla',
+	},
+};</script>
+						</code></pre>
+					</article>
+				</section>
+
+				<!-- Slide -->
+				<section class="slide full stylus">
+					<article>
+						<h4>Componente simple</h4>
+					</article>
+				</section>
+
+				<!-- Slide -->
+				<section class="slide full stylus">
+					<article>
+						<h4>Componente complejo</h4>
+					</article>
+				</section>
+
+				<!-- Slide -->
+				<section class="slide last dual-alternative">
+					<article>
+						<h4>Links</h4>
+					</article>
+					<article class="code">
+						<div class="code-wrapper">
+							<div class="comment">
+								// Links útiles (de personas que les van a
+								explicar mucho mejor)
+							</div>
+							<div class="links">
+								<a
+									href="https://storybook.js.org/docs/react/get-started/introduction"
+									>Storybook</a
+								>
+								<a href="https://javascript.info/"
+									>JavaScript (La biblia | La torá | El
+									Corán)</a
+								>
+								<a
+									href="https://es.reactjs.org/docs/getting-started.html"
+									>ReactJS</a
+								>
+							</div>
+						</div>
+					</article>
+				</section>
+
+				<!-- Slide -->
+				<section class="slide full">
+					<h4>Fin 🧪</h4>
 				</section>
 			</div>
 		</div>
